@@ -28,7 +28,18 @@ public class Vehicle implements Cloneable {
 
 	@Override
 	public Vehicle clone() throws CloneNotSupportedException {
-		return (Vehicle) super.clone();
+		//return (Vehicle) super.clone(); //shallow copy, this is default
+		
+		//this will create deep copy & changed in original object will not affect clone & vice versa
+		Vehicle vehicleDeepCopy=new Vehicle();
+		vehicleDeepCopy.setEngine(this.engine);
+		vehicleDeepCopy.setModelNumber(this.modelNumber);
+		vehicleDeepCopy.setPrice(this.price);
+		
+		for(String d : this.getVehicleType()) {
+			vehicleDeepCopy.getVehicleType().add(d);
+		}
+		return vehicleDeepCopy;
 	}
 
 	public String getModelNumber() {

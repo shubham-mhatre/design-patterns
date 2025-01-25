@@ -19,8 +19,13 @@ public class PrototypeTest {
 		vehicle.loadData();
 		System.out.println(vehicle.toString());
 		
-		
 		Vehicle fourVehiler = vehicle.clone();
+		
+		//this will remove vehicletype from original object as well as clone object.
+		//because of shallow copy in clone method, so convert clone method to deep copy
+		vehicle.getVehicleType().remove(0);		
+		
+		System.out.println(vehicle.toString());
 		System.out.println(fourVehiler.toString());
 	}
 
