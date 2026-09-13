@@ -1,4 +1,4 @@
-package com.sm.dp.creational.factory;
+package com.sm.dp.creational.factory.simplefactory;
 
 public class Laptop implements Compute {
 
